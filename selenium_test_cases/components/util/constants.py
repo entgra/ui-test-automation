@@ -32,7 +32,7 @@ HOST_LOCALHOST = "https://localhost:9443"
 HOST_REMOTE = "https://uem.mgt.entgra.net"
 ROOT_DIR = selenium_test_cases.root_dir.ROOT_DIR
 ADMIN = "admin"
-ADMIN_SUB_TENANT = "admin@automation50.io"
+ADMIN_SUB_TENANT = "admin@automation.io"
 URL_ENDPOINT_MGT = "/endpoint-mgt/devices"
 URL_APP_PUBLISHER = "/app-publisher/apps"
 URL_APP_STORE = "/store/android/applications"
@@ -66,3 +66,10 @@ SUB_GROUP_DESCRIPTION_1 = "Sub Group Description 1"
 
 GROUP_EDIT_COMPONENT_NAME = "Group Name"
 GROUP_EDIT_COMPONENT_DESCRIPTION = "Group Description"
+
+
+# Icons and files
+ENTGRA_IMAGE = RESOURCES_ICONS_ENTGRA_DIR + "/Entgra.jpeg"
+
+# Sample certificate
+SAMPLE_CERTIFICATE = RESOURCES_CERTIFICATES_DIR + "/sample.crt"

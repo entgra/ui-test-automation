@@ -129,6 +129,15 @@ def initial_app_publisher_login(driver):
         consent_button(driver)
 
 
+def app_publisher_login(driver):
+    if constants.is_remote:
+        driver.get(constants.HOST_REMOTE + constants.URL_APP_PUBLISHER)
+        login_remote_form(driver)
+    else:
+        driver.get(constants.HOST_LOCALHOST + constants.URL_APP_PUBLISHER)
+        login_local_form(driver)
+
+
 def initial_app_store_login(driver):
     if constants.is_remote:
         driver.get(constants.HOST_REMOTE + constants.URL_APP_STORE)
@@ -139,6 +148,16 @@ def initial_app_store_login(driver):
         driver.get(constants.HOST_LOCALHOST + constants.URL_APP_STORE)
         login_local_form(driver)
         consent_button(driver)
+
+
+def app_store_login(driver):
+    if constants.is_remote:
+        driver.get(constants.HOST_REMOTE + constants.URL_APP_STORE)
+        login_remote_form(driver)
+
+    else:
+        driver.get(constants.HOST_LOCALHOST + constants.URL_APP_STORE)
+        login_local_form(driver)
 
 
 def skip_tour_guide(driver):

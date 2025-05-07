@@ -15,7 +15,7 @@
 # KIND, either express or implied. See the License for the
 # specific language governing permissions and limitations
 # under the License.
-
+import time
 
 import pytest
 import selenium_test_cases.components.util.generalUtils as generalUtils
@@ -36,6 +36,5 @@ def test_create_parent_group_1(driver):
 
 
 def test_create_sub_group(driver):
-    create_group.create_sub_group(driver, constants.GROUP_NAME_1, constants.SUB_GROUP_NAME_1, constants.GROUP_DESCRIPTION_1, constants.ADMIN)
-
-
+    create_group.create_sub_group(driver, constants.GROUP_NAME_1, constants.SUB_GROUP_NAME_1,
+                                  constants.GROUP_DESCRIPTION_1, constants.ADMIN)

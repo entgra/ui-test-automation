@@ -18,6 +18,9 @@ pip show selenium
 # Install Pytest
 pip install -U pytest
 
+#for Windows -> pytest
+#pip3 install pytest
+
 # Verify the installation of Pytest
 pytest --version
 
