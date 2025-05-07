@@ -1,0 +1,1496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ServerHost" elementType="Argument">
+            <stringProp name="Argument.name">ServerHost</stringProp>
+            <stringProp name="Argument.value">dev.mdm.vfcarbon.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ServerPort" elementType="Argument">
+            <stringProp name="Argument.name">ServerPort</stringProp>
+            <stringProp name="Argument.value">443</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="UserName" elementType="Argument">
+            <stringProp name="Argument.name">UserName</stringProp>
+            <stringProp name="Argument.value">9BU62fcPNuDCfFp3PFitPDPG5VIa</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Password" elementType="Argument">
+            <stringProp name="Argument.name">Password</stringProp>
+            <stringProp name="Argument.value">KV8gGBxxaVK1Zp5VtekH1lvzMrsa</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DeviceCount" elementType="Argument">
+            <stringProp name="Argument.name">DeviceCount</stringProp>
+            <stringProp name="Argument.value">2000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DevicePollingInterval" elementType="Argument">
+            <stringProp name="Argument.name">DevicePollingInterval</stringProp>
+            <stringProp name="Argument.value">30000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="VHQInterval" elementType="Argument">
+            <stringProp name="Argument.name">VHQInterval</stringProp>
+            <stringProp name="Argument.value">30000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RampUpPeriod" elementType="Argument">
+            <stringProp name="Argument.name">RampUpPeriod</stringProp>
+            <stringProp name="Argument.value">60</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - Local" enabled="false">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="host_mgt" elementType="Argument">
+            <stringProp name="Argument.name">host_mgt</stringProp>
+            <stringProp name="Argument.value">localhost</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">8243</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">for local: 8243, for staging: keep it blank</stringProp>
+          </elementProp>
+          <elementProp name="mgt_port" elementType="Argument">
+            <stringProp name="Argument.name">mgt_port</stringProp>
+            <stringProp name="Argument.value">9443</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="tenant_user_name" elementType="Argument">
+            <stringProp name="Argument.name">tenant_user_name</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="domain_name" elementType="Argument">
+            <stringProp name="Argument.name">domain_name</stringProp>
+            <stringProp name="Argument.value">automation.io</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="password" elementType="Argument">
+            <stringProp name="Argument.name">password</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="super_tenant_user" elementType="Argument">
+            <stringProp name="Argument.name">super_tenant_user</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="super_tenant_user_password" elementType="Argument">
+            <stringProp name="Argument.name">super_tenant_user_password</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="is_super_tenant" elementType="Argument">
+            <stringProp name="Argument.name">is_super_tenant</stringProp>
+            <stringProp name="Argument.value">false</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="device_count" elementType="Argument">
+            <stringProp name="Argument.name">device_count</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="device_count_period" elementType="Argument">
+            <stringProp name="Argument.name">device_count_period</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="path" elementType="Argument">
+            <stringProp name="Argument.name">path</stringProp>
+            <stringProp name="Argument.value">/api/device-mgt/v1.0</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="path_android" elementType="Argument">
+            <stringProp name="Argument.name">path_android</stringProp>
+            <stringProp name="Argument.value">/api/device-mgt/android/v1.0</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="firstName" elementType="Argument">
+            <stringProp name="Argument.name">firstName</stringProp>
+            <stringProp name="Argument.value">firstName</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="lastName" elementType="Argument">
+            <stringProp name="Argument.name">lastName</stringProp>
+            <stringProp name="Argument.value">lastName</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="usagePlan" elementType="Argument">
+            <stringProp name="Argument.name">usagePlan</stringProp>
+            <stringProp name="Argument.value">Demo</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="createdDate" elementType="Argument">
+            <stringProp name="Argument.name">createdDate</stringProp>
+            <stringProp name="Argument.value">2023-02-22T08:22:35+05:30</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="email" elementType="Argument">
+            <stringProp name="Argument.name">email</stringProp>
+            <stringProp name="Argument.value">test@entgra.io</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="device_id_prefix" elementType="Argument">
+            <stringProp name="Argument.name">device_id_prefix</stringProp>
+            <stringProp name="Argument.value">selenium</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="device_id_prefix_windows" elementType="Argument">
+            <stringProp name="Argument.name">device_id_prefix_windows</stringProp>
+            <stringProp name="Argument.value">win</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Polling_duration_in_ms" elementType="Argument">
+            <stringProp name="Argument.name">Polling_duration_in_ms</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="number_of_syncing" elementType="Argument">
+            <stringProp name="Argument.name">number_of_syncing</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - Remote" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">uem.gw.entgra.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="host_mgt" elementType="Argument">
+            <stringProp name="Argument.name">host_mgt</stringProp>
+            <stringProp name="Argument.value">uem.mgt.entgra.net</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">for local: 8243, for remote: keep it blank</stringProp>
+          </elementProp>
+          <elementProp name="mgt_port" elementType="Argument">
+            <stringProp name="Argument.name">mgt_port</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">for local: 9443, for remote: keep it blank</stringProp>
+          </elementProp>
+          <elementProp name="tenant_user_name" elementType="Argument">
+            <stringProp name="Argument.name">tenant_user_name</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="domain_name" elementType="Argument">
+            <stringProp name="Argument.name">domain_name</stringProp>
+            <stringProp name="Argument.value">automationnew1.io</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="password" elementType="Argument">
+            <stringProp name="Argument.name">password</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="super_tenant_user" elementType="Argument">
+            <stringProp name="Argument.name">super_tenant_user</stringProp>
+            <stringProp name="Argument.value">admin</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="super_tenant_user_password" elementType="Argument">
+            <stringProp name="Argument.name">super_tenant_user_password</stringProp>
+            <stringProp name="Argument.value">i0ts3rv3r</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="is_super_tenant" elementType="Argument">
+            <stringProp name="Argument.name">is_super_tenant</stringProp>
+            <stringProp name="Argument.value">false</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="device_count" elementType="Argument">
+            <stringProp name="Argument.name">device_count</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="device_count_period" elementType="Argument">
+            <stringProp name="Argument.name">device_count_period</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="path" elementType="Argument">
+            <stringProp name="Argument.name">path</stringProp>
+            <stringProp name="Argument.value">/api/device-mgt/v1.0</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="path_android" elementType="Argument">
+            <stringProp name="Argument.name">path_android</stringProp>
+            <stringProp name="Argument.value">/api/device-mgt/android/v1.0</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="firstName" elementType="Argument">
+            <stringProp name="Argument.name">firstName</stringProp>
+            <stringProp name="Argument.value">firstName</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="lastName" elementType="Argument">
+            <stringProp name="Argument.name">lastName</stringProp>
+            <stringProp name="Argument.value">lastName</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="usagePlan" elementType="Argument">
+            <stringProp name="Argument.name">usagePlan</stringProp>
+            <stringProp name="Argument.value">Demo</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="createdDate" elementType="Argument">
+            <stringProp name="Argument.name">createdDate</stringProp>
+            <stringProp name="Argument.value">2023-02-22T08:22:35+05:30</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="email" elementType="Argument">
+            <stringProp name="Argument.name">email</stringProp>
+            <stringProp name="Argument.value">entgra@entgra.io</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="device_id_prefix" elementType="Argument">
+            <stringProp name="Argument.name">device_id_prefix</stringProp>
+            <stringProp name="Argument.value">selenium</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Polling_duration_in_ms" elementType="Argument">
+            <stringProp name="Argument.name">Polling_duration_in_ms</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="number_of_syncing" elementType="Argument">
+            <stringProp name="Argument.name">number_of_syncing</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="device_id_prefix_windows" elementType="Argument">
+            <stringProp name="Argument.name">device_id_prefix_windows</stringProp>
+            <stringProp name="Argument.value">automationnew1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Login" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1375525852000</longProp>
+        <longProp name="ThreadGroup.end_time">1375525852000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+          <stringProp name="CookieManager.policy">rfc2109</stringProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login to Carbon Console" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:aut=&quot;http://authentication.services.core.carbon.wso2.org&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;aut:login&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;aut:username&gt;${super_tenant_user}&lt;/aut:username&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;aut:password&gt;${super_tenant_user_password}&lt;/aut:password&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;aut:remoteAddress&gt;127.0.0.1&lt;/aut:remoteAddress&gt;&#xd;
+      &lt;/aut:login&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${mgt_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/services/AuthenticationAdmin.AuthenticationAdminHttpsSoap11Endpoint/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">SOAPAction</stringProp>
+                <stringProp name="Header.value">urn:login</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Check Tenant Availability" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ser=&quot;http://services.mgt.tenant.carbon.wso2.org&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;ser:getTenant&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;ser:tenantDomain&gt;${domain_name}&lt;/ser:tenantDomain&gt;&#xd;
+      &lt;/ser:getTenant&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${mgt_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">services/TenantMgtAdminService.TenantMgtAdminServiceHttpsSoap11Endpoint/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">SOAPAction</stringProp>
+                <stringProp name="Header.value">urn:getTenant</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
+            <stringProp name="XPathExtractor.default">undefined</stringProp>
+            <stringProp name="XPathExtractor.refname">tenant_exists</stringProp>
+            <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
+            <stringProp name="XPathExtractor.xpathQuery">//*[local-name()=&apos;active&apos;]/text()</stringProp>
+            <boolProp name="XPathExtractor.validate">false</boolProp>
+            <boolProp name="XPathExtractor.tolerant">false</boolProp>
+            <boolProp name="XPathExtractor.namespace">true</boolProp>
+          </XPathExtractor>
+          <hashTree/>
+          <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+            <boolProp name="displayJMeterProperties">false</boolProp>
+            <boolProp name="displayJMeterVariables">true</boolProp>
+            <boolProp name="displaySamplerProperties">true</boolProp>
+            <boolProp name="displaySystemProperties">false</boolProp>
+          </DebugPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Tenant Creation" enabled="true">
+          <stringProp name="IfController.condition">${tenant_exists}==false</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Tenant" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ser=&quot;http://services.mgt.tenant.carbon.wso2.org&quot; xmlns:xsd=&quot;http://beans.common.stratos.carbon.wso2.org/xsd&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;ser:addTenant&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;ser:tenantInfoBean&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:active&gt;1&lt;/xsd:active&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:admin&gt;${tenant_user_name}&lt;/xsd:admin&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:adminPassword&gt;${password}&lt;/xsd:adminPassword&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:createdDate&gt;${createdDate}&lt;/xsd:createdDate&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:email&gt;${email}&lt;/xsd:email&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:firstname&gt;${firstName}&lt;/xsd:firstname&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:lastname&gt;${lastName}&lt;/xsd:lastname&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:tenantDomain&gt;${domain_name}&lt;/xsd:tenantDomain&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:tenantId&gt;0&lt;/xsd:tenantId&gt;&#xd;
+            &lt;!--Optional:--&gt;&#xd;
+            &lt;xsd:usagePlan&gt;${usagePlan}&lt;/xsd:usagePlan&gt;&#xd;
+         &lt;/ser:tenantInfoBean&gt;&#xd;
+      &lt;/ser:addTenant&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+            <stringProp name="HTTPSampler.port">${mgt_port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/services/TenantMgtAdminService.TenantMgtAdminServiceHttpsSoap11Endpoint/</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">text/xml;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">SOAPAction</stringProp>
+                  <stringProp name="Header.value">urn:addTenant</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Log Out - Super Tenant" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:aut=&quot;http://authentication.services.core.carbon.wso2.org&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;aut:logout/&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${mgt_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">services/AuthenticationAdmin.AuthenticationAdminHttpsSoap11Endpoint/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">SOAPAction</stringProp>
+                <stringProp name="Header.value">urn:logout</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49588">202</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login to Sub - Tenant" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:aut=&quot;http://authentication.services.core.carbon.wso2.org&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;aut:login&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;aut:username&gt;${tenant_user_name}@${domain_name}&lt;/aut:username&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;aut:password&gt;${password}&lt;/aut:password&gt;&#xd;
+         &lt;!--Optional:--&gt;&#xd;
+         &lt;aut:remoteAddress&gt;127.0.0.1&lt;/aut:remoteAddress&gt;&#xd;
+      &lt;/aut:login&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${mgt_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/services/AuthenticationAdmin.AuthenticationAdminHttpsSoap11Endpoint/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">SOAPAction</stringProp>
+                <stringProp name="Header.value">urn:login</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Log Out - Sub Tenant" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:aut=&quot;http://authentication.services.core.carbon.wso2.org&quot;&gt;&#xd;
+   &lt;soapenv:Header/&gt;&#xd;
+   &lt;soapenv:Body&gt;&#xd;
+      &lt;aut:logout/&gt;&#xd;
+   &lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${mgt_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">services/AuthenticationAdmin.AuthenticationAdminHttpsSoap11Endpoint/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">SOAPAction</stringProp>
+                <stringProp name="Header.value">urn:logout</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49588">202</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Access Token Generator" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="parameters">tenant_user_name,domain_name,password</stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="script">import org.apache.commons.codec.binary.Base64;
+
+//String tenant_user= vars.get(&quot;tenant_user_name&quot;);
+//String password= vars.get(&quot;password&quot;);
+String tenant_user= vars.get(&quot;super_tenant_user&quot;);
+String password= vars.get(&quot;super_tenant_user_password&quot;);
+String toEncode = tenant_user + &quot;:&quot; + password;
+
+byte[] encryptedId = Base64.encodeBase64(toEncode.getBytes());
+vars.put(&quot;encodedUserPassword&quot;,&quot;Basic &quot; + new String(encryptedId));</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Register App Common" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;applicationName&quot;:&quot;app-device-sub-aaa&quot;,&#xd;
+  &quot;username&quot;:&quot;${super_tenant_user}&quot;,&#xd;
+  &quot;password&quot;:&quot;${super_tenant_user_password}&quot;,&#xd;
+  &quot;supportedGrantTypes&quot; : [&quot;refresh_token&quot;, &quot;client_credentials&quot;, &quot;password&quot;],&#xd;
+  &quot;callBackUrl&quot;:&quot;www.example.com&quot;,&#xd;
+  &quot;isSaasApp&quot;:true,&#xd;
+  &quot;tags&quot;: [&quot;android&quot;, &quot;device_management&quot;, &quot;application_management&quot;, &quot;subscription_management&quot;, &quot;review_management&quot;]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api-application-registration/register</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${encodedUserPassword}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="ClientID Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">clientId</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;client_id&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">clientSecret</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;client_secret&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">0</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+            <stringProp name="ConstantTimer.delay">3000</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters">clientId,clientSecret</stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import org.apache.commons.codec.binary.Base64;
+
+String clientId= vars.get(&quot;clientId&quot;);
+String clientSecret = vars.get(&quot;clientSecret&quot;);
+String toEncode = clientId + &quot;:&quot; + clientSecret;
+
+byte[] encryptedId = Base64.encodeBase64(toEncode.getBytes());
+vars.put(&quot;base64encodedId&quot;,new String(encryptedId));
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller - Super" enabled="true">
+          <stringProp name="IfController.condition">${is_super_tenant}==true</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Token - super" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="username" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${tenant_user_name}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">username</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${password}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                </elementProp>
+                <elementProp name="grant_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">grant_type</stringProp>
+                  <stringProp name="Argument.value">password</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="scope" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">grafana:api:view dm:sign-csr cm:cert:add cm:cert:details:get cm:cert:view cm:cert:delete cm:cert:verify dm:activity:get dm:an:artifacts:stream:add dm:an:artifacts:stream:delete dm:an:artifacts:rcv:add dm:an:artifacts:rcv:delete dm:an:artifacts:pub:add dm:an:artifacts:pub:delete dm:an:artifacts:siddhi:add dm:an:artifacts:siddhi:delete dm:conf:view dm:conf:manage dm:device:enroll dm:device:modify dm:device:disenroll dm:device:event:publish dm:ops:view dm:device-type:event:modify dm:device-type:event:view dm:devices:view dm:devices:details dm:devices:update dm:devices:delete dm:devices:features:view dm:devices:search dm:devices:app:view dm:devices:ops:view dm:devices:policy:view dm:devices:compliance:view dm:devices:status:change dm:devices:enrollment-guide:view dm:device-type:view dm:device-type:features:view dm:device-type:conf:view dm:policies:view dm:geo:an:view dm:geo:alerts:manage dm:geo:geo-fence:manage gm:groups:view gm:groups:count gm:groups:add gm:groups:groups-view gm:groups:update gm:groups:remove gm:roles:share gm:roles:view gm:devices:view gm:devices:count gm:devices:add gm:devices:remove gm:devices:assign gm:groups:device:view gm:devices-types:view dm:metadata:view dm:metadata:create dm:metadata:update dm:metadata:remove dm:notifications:view dm:notif:mark-checked pm:policies:add pm:policies:details:view pm:policies:update pm:policies:remove pm:policies:activate pm:policies:deactivate pm:policies:change pm:policies:priorities:update pm:policies:effective-policy dm:remote:connect rm:roles:view rm:roles:permissions:view rm:roles:details:view rm:roles:add rm:roles:combined:add rm:roles:update rm:roles:delete rm:users:add um:users:add um:users:details:view um:users:update um:users:delete um:roles:view um:users:user-details:view um:users:count um:users:is-exist um:users:search um:users:cred:change um:users:invite um:users:permission:view dm:whitelable:view dm:whitelable:update am:admin:app:install am:admin:app:uninstall dm:authorization:verify dm:device-type:deploy dm:admin:devices:view dm:admin:enrollment:update dm:admin:devices:permanent-delete dm:admin:devices:usage:view dm:admin:device-type:modify dm:admin:device-type:view dm:admin:device-type:conf:add gm:admin:groups:view gm:admin:groups:count gm:admin:groups:add um:admin:users:view um:admin:users:remove admin:tenant:view admin:permissions:add conf:sms-handler:view an:db:non-compliant:count an:db:non-compliant an:db:by-groups an:db:device:count an:db:feature-non-compliant an:db:overview:count an:db:filtered-count an:db:details and:work:customer and:work:admin app:command:modify dm:admin dm:admin:metadata:view dm:firealarm:enroll dm:admin:topics:view am:admin:pub:app:update am:admin:pub:app:review:update am:admin:pub:app:review:view am:pub:app:view am:pub:app:update am:pub:sp:app:view am:pub:sp:connect am:pub:sp:create am:pub:sp:attach am:pub:sp:detach am:admin:store:app:review:update am:admin:store:app:sub:view am:admin:store:app:sub:modify am:store:app:view am:store:app:modify am:store:app:review:view am:store:app:review:update am:store:app:sub:install am:store:app:sub:uninstall am:store:vpp:user:modify am:store:vpp:user:view am:store:vpp:assets:modify am:store:vpp:assets:view dm:admin:sim:enroll dm:admin:sim:update dm:admin:sim:permanent-delete dm:sim:view dm:sim:types:view dm:sim:com:activate dm:sim:com:deactivate dm:sim:types:add dm:sim:types:update dm:traccar:devices:view and:ops:lock-devices and:ops:unlock-devices and:ops:location and:ops:clear-password and:ops:control-camera and:ops:device-info and:ops:logcat and:ops:enterprise-wipe and:ops:wipe and:ops:app-list and:ops:ring and:ops:clear-app and:ops:reboot and:ops:change-LockTask and:ops:mute and:ops:install-app and:ops:update-app and:ops:uninstall-app and:ops:blacklist-app and:ops:upgrade-firmware and:ops:configure-vpn and:ops:send-notif and:ops:configure-wifi and:ops:global-proxy and:ops:encrypt-storage and:ops:change-lock-code and:ops:password-policy and:ops:set-webclip and:ops:file-transfer and:ops:send-app-restrictions and:ops:conf-display-msg and:ops:add-google-acc and:ops:configure-device-theme-wallpaper and:ops:configure-device-theme-audio and:ops:update-default-sim and:ops:authenticate-acc and:ops:suspend-package and:ops:alternate-install and:devices:enroll and:devices:disenroll and:conf:view and:conf:manage and:enterprise:modify and:enterprise:view ios:dep:view ios:dep:add ios:ops:cellular-payload ios:ops:confure-apn ios:ops:add-email ios:ops:add-LDAP ios:ops:install-enterprise-app ios:ops:install-store-app ios:ops:remove-app ios:ops:app-list ios:ops:profile-list ios:ops:lock ios:ops:enterprise-wipe ios:ops:device-info ios:ops:restriction ios:ops:confure-wifi ios:ops:global-proxy ios:ops:ring ios:ops:location ios:ops:notif ios:ops:airplay ios:ops:caldav ios:ops:cal-sub ios:ops:passcode-policy ios:ops:webclip ios:ops:confure-vpn ios:ops:per-app-vpn ios:ops:app-to-per-app-vpn ios:ops:app-lock ios:ops:clear-passcode ios:ops:remove-profile ios:ops:get-restrictions ios:ops:wipe ios:ops:boolean-setting ios:ops:wallpaper ios:ops:app-attributes ios:ops:app-conf ios:ops:external-profile mac:ops:restrict-app-store ios:ops:install-font mac:ops:shutdown mac:ops:login-window-preference mac:ops:restart mac:ops:firewall ios:devices:view ios:devices:enroll ios:ops:app ios:conf:view ios:conf:manage win:devices:enroll win:conf:view win:conf:manage win:ops:lock-devices win:ops:disenroll win:ops:wipe win:ops:ring win:ops:lock-reset win:ops:reboot win:ops:location win:ops:apps win:ops:enterprise-app-install win:ops:scan and:conf:devices:enroll </stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">scope</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/token</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${base64encodedId}</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">ori</stringProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller - Sub" enabled="true">
+          <stringProp name="IfController.condition">${is_super_tenant}==false</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate Token - sub" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="username" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${tenant_user_name}@${domain_name}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">username</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${password}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                </elementProp>
+                <elementProp name="grant_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">grant_type</stringProp>
+                  <stringProp name="Argument.value">password</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="scope" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">grafana:api:view dm:sign-csr cm:cert:add cm:cert:details:get cm:cert:view cm:cert:delete cm:cert:verify dm:activity:get dm:an:artifacts:stream:add dm:an:artifacts:stream:delete dm:an:artifacts:rcv:add dm:an:artifacts:rcv:delete dm:an:artifacts:pub:add dm:an:artifacts:pub:delete dm:an:artifacts:siddhi:add dm:an:artifacts:siddhi:delete dm:conf:view dm:conf:manage dm:device:enroll dm:device:modify dm:device:disenroll dm:device:event:publish dm:ops:view dm:device-type:event:modify dm:device-type:event:view dm:devices:view dm:devices:details dm:devices:update dm:devices:delete dm:devices:features:view dm:devices:search dm:devices:app:view dm:devices:ops:view dm:devices:policy:view dm:devices:compliance:view dm:devices:status:change dm:devices:enrollment-guide:view dm:device-type:view dm:device-type:features:view dm:device-type:conf:view dm:policies:view dm:geo:an:view dm:geo:alerts:manage dm:geo:geo-fence:manage gm:groups:view gm:groups:count gm:groups:add gm:groups:groups-view gm:groups:update gm:groups:remove gm:roles:share gm:roles:view gm:devices:view gm:devices:count gm:devices:add gm:devices:remove gm:devices:assign gm:groups:device:view gm:devices-types:view dm:metadata:view dm:metadata:create dm:metadata:update dm:metadata:remove dm:notifications:view dm:notif:mark-checked pm:policies:add pm:policies:details:view pm:policies:update pm:policies:remove pm:policies:activate pm:policies:deactivate pm:policies:change pm:policies:priorities:update pm:policies:effective-policy dm:remote:connect rm:roles:view rm:roles:permissions:view rm:roles:details:view rm:roles:add rm:roles:combined:add rm:roles:update rm:roles:delete rm:users:add um:users:add um:users:details:view um:users:update um:users:delete um:roles:view um:users:user-details:view um:users:count um:users:is-exist um:users:search um:users:cred:change um:users:invite um:users:permission:view dm:whitelable:view dm:whitelable:update am:admin:app:install am:admin:app:uninstall dm:authorization:verify dm:device-type:deploy dm:admin:devices:view dm:admin:enrollment:update dm:admin:devices:permanent-delete dm:admin:devices:usage:view dm:admin:device-type:modify dm:admin:device-type:view dm:admin:device-type:conf:add gm:admin:groups:view gm:admin:groups:count gm:admin:groups:add um:admin:users:view um:admin:users:remove admin:tenant:view admin:permissions:add conf:sms-handler:view an:db:non-compliant:count an:db:non-compliant an:db:by-groups an:db:device:count an:db:feature-non-compliant an:db:overview:count an:db:filtered-count an:db:details and:work:customer and:work:admin app:command:modify dm:admin dm:admin:metadata:view dm:firealarm:enroll dm:admin:topics:view am:admin:pub:app:update am:admin:pub:app:review:update am:admin:pub:app:review:view am:pub:app:view am:pub:app:update am:pub:sp:app:view am:pub:sp:connect am:pub:sp:create am:pub:sp:attach am:pub:sp:detach am:admin:store:app:review:update am:admin:store:app:sub:view am:admin:store:app:sub:modify am:store:app:view am:store:app:modify am:store:app:review:view am:store:app:review:update am:store:app:sub:install am:store:app:sub:uninstall am:store:vpp:user:modify am:store:vpp:user:view am:store:vpp:assets:modify am:store:vpp:assets:view dm:admin:sim:enroll dm:admin:sim:update dm:admin:sim:permanent-delete dm:sim:view dm:sim:types:view dm:sim:com:activate dm:sim:com:deactivate dm:sim:types:add dm:sim:types:update dm:traccar:devices:view and:ops:lock-devices and:ops:unlock-devices and:ops:location and:ops:clear-password and:ops:control-camera and:ops:device-info and:ops:logcat and:ops:enterprise-wipe and:ops:wipe and:ops:app-list and:ops:ring and:ops:clear-app and:ops:reboot and:ops:change-LockTask and:ops:mute and:ops:install-app and:ops:update-app and:ops:uninstall-app and:ops:blacklist-app and:ops:upgrade-firmware and:ops:configure-vpn and:ops:send-notif and:ops:configure-wifi and:ops:global-proxy and:ops:encrypt-storage and:ops:change-lock-code and:ops:password-policy and:ops:set-webclip and:ops:file-transfer and:ops:send-app-restrictions and:ops:conf-display-msg and:ops:add-google-acc and:ops:configure-device-theme-wallpaper and:ops:configure-device-theme-audio and:ops:update-default-sim and:ops:authenticate-acc and:ops:suspend-package and:ops:alternate-install and:devices:enroll and:devices:disenroll and:conf:view and:conf:manage and:enterprise:modify and:enterprise:view ios:dep:view ios:dep:add ios:ops:cellular-payload ios:ops:confure-apn ios:ops:add-email ios:ops:add-LDAP ios:ops:install-enterprise-app ios:ops:install-store-app ios:ops:remove-app ios:ops:app-list ios:ops:profile-list ios:ops:lock ios:ops:enterprise-wipe ios:ops:device-info ios:ops:restriction ios:ops:confure-wifi ios:ops:global-proxy ios:ops:ring ios:ops:location ios:ops:notif ios:ops:airplay ios:ops:caldav ios:ops:cal-sub ios:ops:passcode-policy ios:ops:webclip ios:ops:confure-vpn ios:ops:per-app-vpn ios:ops:app-to-per-app-vpn ios:ops:app-lock ios:ops:clear-passcode ios:ops:remove-profile ios:ops:get-restrictions ios:ops:wipe ios:ops:boolean-setting ios:ops:wallpaper ios:ops:app-attributes ios:ops:app-conf ios:ops:external-profile mac:ops:restrict-app-store ios:ops:install-font mac:ops:shutdown mac:ops:login-window-preference mac:ops:restart mac:ops:firewall ios:devices:view ios:devices:enroll ios:ops:app ios:conf:view ios:conf:manage win:devices:enroll win:conf:view win:conf:manage win:ops:lock-devices win:ops:disenroll win:ops:wipe win:ops:ring win:ops:lock-reset win:ops:reboot win:ops:location win:ops:apps win:ops:enterprise-app-install win:ops:scan and:conf:devices:enroll </stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">scope</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/token</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="content-type" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">Basic ${base64encodedId}</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">ori</stringProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Token" enabled="true">
+          <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+          <stringProp name="RegexExtractor.refname">access_token</stringProp>
+          <stringProp name="RegexExtractor.regex">{&quot;access_token&quot;:&quot;(.+?)&quot;</stringProp>
+          <stringProp name="RegexExtractor.template">$1$</stringProp>
+          <stringProp name="RegexExtractor.default"></stringProp>
+          <stringProp name="RegexExtractor.match_number"></stringProp>
+          <stringProp name="Scope.variable">Token</stringProp>
+        </RegexExtractor>
+        <hashTree/>
+        <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Token Global varaiable/property" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">log.info(&quot;*****Before access token assign*****&quot;)
+var token = vars.get(&quot;access_token&quot;);
+log.info(&quot;*****Before putting token in to  global/property variable*****&quot;)
+//Note: there was a error print when assigning the token to the &quot;Token&quot; variable
+//Error:  JSR223PostProcessor: Problem in JSR223 script, Token Global varaiable/property 
+//javax.script.ScriptException: java.lang.NullPointerException
+//But it looks like this file is re run 2,3 times until variable get the values correctly, therefore this was working
+props.put(&quot;Token&quot;, token);
+log.info(&quot;*****After putting the global/property variable*****&quot;)
+</stringProp>
+        </JSR223PostProcessor>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Add Devices" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${device_count}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${device_count_period}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Device - Android" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{  &#xd;
+   &quot;id&quot;: &quot;Carbon_10_${__threadNum}&quot;,&#xd;
+   &quot;name&quot;:&quot;android-device-${device_id_prefix}-${__threadNum}&quot;,&#xd;
+   &quot;type&quot;:&quot;android&quot;,&#xd;
+   &quot;description&quot;:&quot;this is an android device -${__threadNum}&quot;,&#xd;
+   &quot;deviceIdentifier&quot;:&quot;000-000-${device_id_prefix}-${__threadNum}&quot;,&#xd;
+   &quot;enrolmentInfo&quot;:{  &#xd;
+      &quot;id&quot;:1000${__threadNum},&#xd;
+      &quot;device&quot;:{  &#xd;
+&#xd;
+      },&#xd;
+      &quot;dateOfEnrolment&quot;:0,&#xd;
+      &quot;dateOfLastUpdate&quot;:0,&#xd;
+      &quot;ownership&quot;:&quot;COPE&quot;,&#xd;
+      &quot;status&quot;:&quot;ACTIVE&quot;,&#xd;
+      &quot;owner&quot;:&quot;admin&quot;&#xd;
+   },&#xd;
+   &quot;features&quot;:[  &#xd;
+      {  &#xd;
+         &quot;id&quot;:10,&#xd;
+         &quot;code&quot;:&quot;aaaa1111&quot;,&#xd;
+         &quot;name&quot;:&quot;newfeature1&quot;,&#xd;
+         &quot;description&quot;:&quot;this is the new feature 1&quot;,&#xd;
+         &quot;deviceType&quot;:&quot;android&quot;,&#xd;
+         &quot;metadataEntries&quot;:[  &#xd;
+            {  &#xd;
+               &quot;id&quot;:10,&#xd;
+               &quot;value&quot;:{  &#xd;
+&#xd;
+               }&#xd;
+            }&#xd;
+         ]&#xd;
+      }&#xd;
+   ],&#xd;
+   &quot;properties&quot;:[  &#xd;
+      {  &#xd;
+         &quot;name&quot;:&quot;property1&quot;,&#xd;
+         &quot;value&quot;:&quot;value1&quot;&#xd;
+      }&#xd;
+   ],&#xd;
+   &quot;deviceInfo&quot;:{  &#xd;
+      &quot;deviceModel&quot;:&quot;S6&quot;,&#xd;
+      &quot;vendor&quot;:&quot;SAMSUNG&quot;,&#xd;
+      &quot;osVersion&quot;:&quot;11 (30)&quot;,&#xd;
+      &quot;batteryLevel&quot;:1,&#xd;
+      &quot;internalTotalMemory&quot;:32,&#xd;
+      &quot;internalAvailableMemory&quot;:24,&#xd;
+      &quot;externalTotalMemory&quot;:64,&#xd;
+      &quot;externalAvailableMemory&quot;:60,&#xd;
+      &quot;operator&quot;:&quot;dialog&quot;,&#xd;
+      &quot;connectionType&quot;:&quot;GSM&quot;,&#xd;
+      &quot;mobileSignalStrength&quot;:1,&#xd;
+      &quot;ssid&quot;:&quot;picassowifi&quot;,&#xd;
+      &quot;cpuUsage&quot;:0,&#xd;
+      &quot;totalRAMMemory&quot;:2,&#xd;
+      &quot;availableRAMMemory&quot;:1,&#xd;
+      &quot;pluggedIn&quot;:false,&#xd;
+      &quot;location&quot;:{  &#xd;
+         &quot;deviceId&quot;:0,&#xd;
+         &quot;deviceIdentifier&quot;:{  &#xd;
+            &quot;id&quot;:&quot;string&quot;,&#xd;
+            &quot;type&quot;:&quot;string&quot;&#xd;
+         },&#xd;
+         &quot;latitude&quot;:0,&#xd;
+         &quot;longitude&quot;:0,&#xd;
+         &quot;street1&quot;:&quot;string&quot;,&#xd;
+         &quot;street2&quot;:&quot;string&quot;,&#xd;
+         &quot;city&quot;:&quot;string&quot;,&#xd;
+         &quot;state&quot;:&quot;string&quot;,&#xd;
+         &quot;zip&quot;:&quot;string&quot;,&#xd;
+         &quot;country&quot;:&quot;string&quot;&#xd;
+      },&#xd;
+      &quot;deviceDetailsMap&quot;:{  &#xd;
+&#xd;
+      },&#xd;
+      &quot;imei&quot;:&quot;string&quot;,&#xd;
+      &quot;imsi&quot;:&quot;string&quot;&#xd;
+   },&#xd;
+   &quot;applications&quot;:[  &#xd;
+      {  &#xd;
+         &quot;id&quot;:0,&#xd;
+         &quot;platform&quot;:&quot;string&quot;,&#xd;
+         &quot;category&quot;:&quot;string&quot;,&#xd;
+         &quot;name&quot;:&quot;string&quot;,&#xd;
+         &quot;locationUrl&quot;:&quot;string&quot;,&#xd;
+         &quot;imageUrl&quot;:&quot;string&quot;,&#xd;
+         &quot;version&quot;:&quot;string&quot;,&#xd;
+         &quot;type&quot;:&quot;string&quot;,&#xd;
+         &quot;appProperties&quot;:{  &#xd;
+&#xd;
+         },&#xd;
+         &quot;applicationIdentifier&quot;:&quot;string&quot;,&#xd;
+         &quot;memoryUsage&quot;:0&#xd;
+      }&#xd;
+   ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/device-mgt/android/v1.0/devices</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Token)}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - Windows payload" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">var username = &quot;&quot;;
+if (${is_super_tenant}) {
+	username = vars.get(&quot;tenant_user_name&quot;);
+	} else {
+		username = vars.get(&quot;tenant_user_name&quot;) + &quot;@&quot; + vars.get(&quot;domain_name&quot;) ;
+		}
+
+var password = vars.get(&quot;password&quot;);
+
+
+def payload = &quot;&quot;&quot;&lt;s:Envelope
+   xmlns:s=&quot;http://www.w3.org/2003/05/soap-envelope&quot;
+   xmlns:a=&quot;http://www.w3.org/2005/08/addressing&quot;
+   xmlns:u=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+   xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+   xmlns:wst=&quot;http://docs.oasis-open.org/ws-sx/ws-trust/200512&quot;
+   xmlns:ac=&quot;http://schemas.xmlsoap.org/ws/2006/12/authorization&quot;&gt;
+   &lt;s:Header&gt;
+       &lt;a:Action s:mustUnderstand=&quot;1&quot;&gt;http://schemas.microsoft.com/windows/pki/2009/01/enrollment/RST/wstep&lt;/a:Action&gt;
+       &lt;a:MessageID&gt;urn:uuid:0d5a1441-5891-453b-becf-a2e5f6ea3749&lt;/a:MessageID&gt;
+       &lt;a:ReplyTo&gt;
+           &lt;a:Address&gt;http://www.w3.org/2005/08/addressing/anonymous&lt;/a:Address&gt;
+       &lt;/a:ReplyTo&gt;
+       &lt;a:To s:mustUnderstand=&quot;1&quot;&gt;https://dev.abc.com/ENROLLMENTSERVER/Win10DeviceEnrollmentWebserviceOnPremise.svc&lt;/a:To&gt;
+       &lt;wsse:Security s:mustUnderstand=&quot;1&quot;&gt;
+           &lt;wsse:UsernameToken u:Id=&quot;uuid-cc1ccc1f-2fba-4bcf-b063-ffc0cac77917-4&quot;&gt;
+               &lt;wsse:Username&gt;&quot;&quot;&quot; + username + &quot;&quot;&quot;&lt;/wsse:Username&gt;
+               &lt;wsse:Password wsse:Type=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText&quot;&gt;&quot;&quot;&quot; + password + &quot;&quot;&quot;&lt;/wsse:Password&gt;
+           &lt;/wsse:UsernameToken&gt;
+       &lt;/wsse:Security&gt;
+   &lt;/s:Header&gt;
+   &lt;s:Body&gt;
+       &lt;wst:RequestSecurityToken&gt;
+           &lt;wst:TokenType&gt;http://schemas.microsoft.com/5.0.0.0/ConfigurationManager/Enrollment/DeviceEnrollmentToken&lt;/wst:TokenType&gt;
+           &lt;wst:RequestType&gt;http://docs.oasis-open.org/ws-sx/ws-trust/200512/Issue&lt;/wst:RequestType&gt;
+           &lt;wsse:BinarySecurityToken ValueType=&quot;http://schemas.microsoft.com/windows/pki/2009/01/enrollment#PKCS10&quot; EncodingType=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd#base64binary&quot;&gt;MIICzjCCAboCAQAwSzFJMEcGA1UEAxNANUVGMTg3ODAtNjgxOC00QzEwLThFMjAtRDgwMEJDITJEODFENUI4MDZDMDJGNEJCMTAxNjVFNUVGODFBMzYwADCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAM7HENrrDnKCvoboe5A+Oh7mLjq20QVfnnGhMHgaglDuuu7ZjMijPf/d3GvsCk1WzAxxDSijcMYKKPmvo5yq9s+B6Q9a+WSzRGlmIWISQyIjUXiXjodFm1rU5Zne5GzBiQy++tBSYOvFFvrGANbk41upljtMRlLcCxQakZzt9kv2tMn3e7gqQkhZFlX3VGJ+K48LYOl6kFykR2n2ymPzPaD5+8LmwNfHQbLqLGU4wVX1/EMYqm54hqy3jmoqIAeOD2uylOGGcnvVZWuhK/TA8nJzhm3hi5whiUuhfc9fjPfTCn4yD0py8M1rOwrRmC+LUTZMA/VoZdHDHjKjaUkEOkECAwEAAaBCMEAGCSqGSIb3DQEJDjEzMDEwLwYKKwYBBAGCN0IBAAQhMkQ4MUQ1QjgwNkMwMkY0QkIxMDE2NUU1RUY4MUEzNjAAMAkGBSsOAwIdBQADggEBAHNY0wIHd2k1EYiPwZ+Uu6aB2daaGD1FDwgurQlOEJvdPoMczIEjTG+bw6CAHdSxxfcetp2kVZ7KkNYDMXRRG1L54N4/Mx6M2no8X7LBR6ftqA1zYcA0oO4HYx+jWws7SmOPrFjH5plfoCCQ1NvS4nOKOAimD6uqFsoKljv0BsDCuaOJenXKcpQ9UrUlpnsgb6WTpkNhVlhQJmCoqdiEwvCVlYglRagOr9ux8T9Tu+WOToluAR5/LEZQmAHQkpipJLNgSKZeKPqE02BmOA+PQiqCXy/Hv7l8ExBq6d1u0HidhnkTq03UUSFLqjknHh4Od6lJCGsHkXk3yfFi8bJzu5Q=&lt;/wsse:BinarySecurityToken&gt;
+           &lt;ac:AdditionalContext
+               xmlns=&quot;http://schemas.xmlsoap.org/ws/2006/12/authorization&quot;&gt;
+               &lt;ac:ContextItem Name=&quot;UXInitiated&quot;&gt;
+                   &lt;ac:Value&gt;false&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;HWDevID&quot;&gt;
+                   &lt;ac:Value&gt;5F203FBF35EC44AE84E1335AEDEE17524C61F29023903E24411C1EF89450BBFG&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;Locale&quot;&gt;
+                   &lt;ac:Value&gt;en-US&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;TargetedUserLoggedIn&quot;&gt;
+                   &lt;ac:Value&gt;true&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;OSEdition&quot;&gt;
+                   &lt;ac:Value&gt;48&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;DeviceName&quot;&gt;
+                   &lt;ac:Value&gt;Windows Selenium Device&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;MAC&quot;&gt;
+                   &lt;ac:Value&gt;7C-76-35-98-E7-C1&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;MAC&quot;&gt;
+                   &lt;ac:Value&gt;7C-76-35-98-E7-C0&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;MAC&quot;&gt;
+                   &lt;ac:Value&gt;CA-F0-20-52-41-53&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;MAC&quot;&gt;
+                   &lt;ac:Value&gt;8C-16-45-59-A4-2C&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;MAC&quot;&gt;
+                   &lt;ac:Value&gt;7E-76-35-98-E7-C0&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;MAC&quot;&gt;
+                   &lt;ac:Value&gt;D6-5B-20-52-41-53&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;MAC&quot;&gt;
+                   &lt;ac:Value&gt;D0-3A-20-52-41-53&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;DeviceID&quot;&gt;
+                   &lt;ac:Value&gt;WINDOWS000SELENIUM001&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;EnrollmentType&quot;&gt;
+                   &lt;ac:Value&gt;Full&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;DeviceType&quot;&gt;
+                   &lt;ac:Value&gt;CIMClient_Windows&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;OSVersion&quot;&gt;
+                   &lt;ac:Value&gt;10.0.19045.3693&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;ApplicationVersion&quot;&gt;
+                   &lt;ac:Value&gt;10.0.19045.3693&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;NotInOobe&quot;&gt;
+                   &lt;ac:Value&gt;false&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+               &lt;ac:ContextItem Name=&quot;RequestVersion&quot;&gt;
+                   &lt;ac:Value&gt;5.0&lt;/ac:Value&gt;
+               &lt;/ac:ContextItem&gt;
+           &lt;/ac:AdditionalContext&gt;
+       &lt;/wst:RequestSecurityToken&gt;
+   &lt;/s:Body&gt;
+&lt;/s:Envelope&gt;&quot;&quot;&quot;
+
+
+vars.put(&quot;windows_payload&quot;, payload);</stringProp>
+        </JSR223PreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Add Device - Windows" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${windows_payload}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${mgt_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/device-mgt/windows/v1.0/deviceenrolment/enrollment/onpremise</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">request should be going in mgt or 9443, otherwise req never completes</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">text/xml;charset=UTF-8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Syncing devices" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">${number_of_syncing}</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${device_count}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${ramp_up_period}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="Flow Control Action" enabled="true">
+          <intProp name="ActionProcessor.action">1</intProp>
+          <intProp name="ActionProcessor.target">0</intProp>
+          <stringProp name="ActionProcessor.duration">${Polling_duration_in_ms}</stringProp>
+        </TestAction>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sync Operations- Get Response" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/device-mgt/android/v1.0/devices/000-000-${device_id_prefix}-${__threadNum}/pending-operations</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Token)}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+            <stringProp name="scriptLanguage">javascript</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">var deviceId = &quot;000-000-${prefix}-${__threadNum}&quot;;
+
+var deviceInfoResponse = {&quot;description&quot;:&quot;this is an android device -${__threadNum}&quot;,&quot;deviceIdentifier&quot;:deviceId ,&quot;enrolmentInfo&quot;:{&quot;owner&quot;:null,&quot;ownership&quot;:&quot;COPE&quot;},&quot;name&quot;:&quot;hello&quot;,&quot;properties&quot;:[{&quot;name&quot;:&quot;SERIAL&quot;,&quot;value&quot;:&quot;263837720027&quot;},{&quot;name&quot;:&quot;IMEI&quot;,&quot;value&quot;:&quot;404-147-228&quot;},{&quot;name&quot;:&quot;IMSI&quot;,&quot;value&quot;:null},{&quot;name&quot;:&quot;MAC&quot;,&quot;value&quot;:&quot;b0:c0:90:64:07:89&quot;},{&quot;name&quot;:&quot;DEVICE_MODEL&quot;,&quot;value&quot;:&quot;Verifone Carbon-10&quot;},{&quot;name&quot;:&quot;VENDOR&quot;,&quot;value&quot;:&quot;Wistron&quot;},{&quot;name&quot;:&quot;OS_VERSION&quot;,&quot;value&quot;:&quot;11 (30)&quot;},{&quot;name&quot;:&quot;OS_BUILD_DATE&quot;,&quot;value&quot;:&quot;0&quot;},{&quot;name&quot;:&quot;DEVICE_NAME&quot;,&quot;value&quot;:&quot;android-device-${device_id_prefix}-${__threadNum}&quot;},{&quot;name&quot;:&quot;NETWORK_INFO&quot;,&quot;value&quot;:&quot;[{\&quot;name\&quot;:\&quot;CONNECTION_TYPE\&quot;,\&quot;value\&quot;:\&quot;WIFI\&quot;},{\&quot;name\&quot;:\&quot;WIFI_SSID\&quot;,\&quot;value\&quot;:\&quot;VFI_GUEST\&quot;},{\&quot;name\&quot;:\&quot;WIFI_SIGNAL_STRENGTH\&quot;,\&quot;value\&quot;:\&quot;-32\&quot;},{\&quot;name\&quot;:\&quot;MOBILE_SIGNAL_STRENGTH\&quot;,\&quot;value\&quot;:\&quot;99\&quot;}]&quot;},{&quot;name&quot;:&quot;WIFI_SCAN_RESULT&quot;,&quot;value&quot;:null},{&quot;name&quot;:&quot;CPU_INFO&quot;,&quot;value&quot;:&quot;[{\&quot;name\&quot;:\&quot;User\&quot;,\&quot;value\&quot;:\&quot;14%\&quot;},{\&quot;name\&quot;:\&quot;System\&quot;,\&quot;value\&quot;:\&quot;13%\&quot;},{\&quot;name\&quot;:\&quot;IOW\&quot;,\&quot;value\&quot;:\&quot;0%\&quot;},{\&quot;name\&quot;:\&quot;IRQ\&quot;,\&quot;value\&quot;:\&quot;2%\&quot;}]&quot;},{&quot;name&quot;:&quot;RAM_INFO&quot;,&quot;value&quot;:&quot;[{\&quot;name\&quot;:\&quot;TOTAL_MEMORY\&quot;,\&quot;value\&quot;:\&quot;939511808\&quot;},{\&quot;name\&quot;:\&quot;AVAILABLE_MEMORY\&quot;,\&quot;value\&quot;:\&quot;651182080\&quot;},{\&quot;name\&quot;:\&quot;THRESHOLD\&quot;,\&quot;value\&quot;:\&quot;107373568\&quot;},{\&quot;name\&quot;:\&quot;LOW_MEMORY\&quot;,\&quot;value\&quot;:\&quot;false\&quot;}]&quot;},{&quot;name&quot;:&quot;BATTERY_INFO&quot;,&quot;value&quot;:&quot;[{\&quot;name\&quot;:\&quot;BATTERY_LEVEL\&quot;,\&quot;value\&quot;:\&quot;100\&quot;},{\&quot;name\&quot;:\&quot;SCALE\&quot;,\&quot;value\&quot;:\&quot;100\&quot;},{\&quot;name\&quot;:\&quot;BATTERY_VOLTAGE\&quot;,\&quot;value\&quot;:\&quot;0\&quot;},{\&quot;name\&quot;:\&quot;HEALTH\&quot;,\&quot;value\&quot;:\&quot;UNKNOWN\&quot;},{\&quot;name\&quot;:\&quot;STATUS\&quot;,\&quot;value\&quot;:\&quot;null\&quot;},{\&quot;name\&quot;:\&quot;PLUGGED\&quot;,\&quot;value\&quot;:\&quot;AC\&quot;}]&quot;},{&quot;name&quot;:&quot;DEVICE_INFO&quot;,&quot;value&quot;:&quot;[{\&quot;name\&quot;:\&quot;ENCRYPTION_ENABLED\&quot;,\&quot;value\&quot;:\&quot;false\&quot;},{\&quot;name\&quot;:\&quot;PASSCODE_ENABLED\&quot;,\&quot;value\&quot;:\&quot;true\&quot;},{\&quot;name\&quot;:\&quot;BATTERY_LEVEL\&quot;,\&quot;value\&quot;:\&quot;100\&quot;},{\&quot;name\&quot;:\&quot;INTERNAL_TOTAL_MEMORY\&quot;,\&quot;value\&quot;:\&quot;10.46\&quot;},{\&quot;name\&quot;:\&quot;INTERNAL_AVAILABLE_MEMORY\&quot;,\&quot;value\&quot;:\&quot;10.09\&quot;},{\&quot;name\&quot;:\&quot;EXTERNAL_TOTAL_MEMORY\&quot;,\&quot;value\&quot;:\&quot;0.0\&quot;},{\&quot;name\&quot;:\&quot;EXTERNAL_AVAILABLE_MEMORY\&quot;,\&quot;value\&quot;:\&quot;0.0\&quot;},{\&quot;name\&quot;:\&quot;OPERATOR\&quot;,\&quot;value\&quot;:\&quot;\&quot;}]&quot;}]};
+
+var applicationListResponse = [{&quot;name&quot;:&quot;Widget%20Preview&quot;,&quot;package&quot;:&quot;com.android.widgetpreview&quot;,&quot;version&quot;:&quot;5.1.1-4174727&quot;,&quot;isSystemApp&quot;:false,&quot;isActive&quot;:false},{&quot;name&quot;:&quot;com.android.gesture.builder&quot;,&quot;package&quot;:&quot;com.android.gesture.builder&quot;,&quot;version&quot;:&quot;5.1.1-4174727&quot;,&quot;isSystemApp&quot;:false,&quot;isActive&quot;:false},{&quot;name&quot;:&quot;API%20Demos&quot;,&quot;package&quot;:&quot;com.example.android.apis&quot;,&quot;version&quot;:&quot;5.1.1-4174727&quot;,&quot;isSystemApp&quot;:false,&quot;isActive&quot;:false},{&quot;name&quot;:&quot;WSO2%20Device%20Management%20Agent&quot;,&quot;package&quot;:&quot;org.wso2.iot.agent&quot;,&quot;version&quot;:&quot;3.3.1&quot;,&quot;isSystemApp&quot;:false,&quot;isActive&quot;:true,&quot;USS&quot;:28332},{&quot;name&quot;:&quot;com.android.smoketest.tests&quot;,&quot;package&quot;:&quot;com.android.smoketest.tests&quot;,&quot;version&quot;:&quot;5.1.1-4174727&quot;,&quot;isSystemApp&quot;:false,&quot;isActive&quot;:false},{&quot;name&quot;:&quot;Sample%20Soft%20Keyboard&quot;,&quot;package&quot;:&quot;com.example.android.softkeyboard&quot;,&quot;version&quot;:&quot;5.1.1-4174727&quot;,&quot;isSystemApp&quot;:false,&quot;isActive&quot;:false},{&quot;name&quot;:&quot;Example%20Wallpapers&quot;,&quot;package&quot;:&quot;com.example.android.livecubes&quot;,&quot;version&quot;:&quot;5.1.1-4174727&quot;,&quot;isSystemApp&quot;:false,&quot;isActive&quot;:false},{&quot;name&quot;:&quot;com.android.smoketest&quot;,&quot;package&quot;:&quot;com.android.smoketest&quot;,&quot;version&quot;:&quot;5.1.1-4174727&quot;,&quot;isSystemApp&quot;:false,&quot;isActive&quot;:false}];
+
+var locationResponse = {&quot;latitude&quot;:37.421998333333335,&quot;longitude&quot;:-122.08400000000002};
+
+//var pendingOperations = JSON.parse(prev.getResponseDataAsString());
+
+var pendingOperations1 =prev.getResponseDataAsString();
+
+var pendingOperations = JSON.parse(pendingOperations1);
+
+var i, operation;
+
+for (i in pendingOperations){
+	operation = pendingOperations[i];
+     pendingOperations[i].status = &quot;COMPLETED&quot;;
+	if (operation[&quot;code&quot;] === &quot;DEVICE_INFO&quot;) {
+		pendingOperations[i].operationResponse = JSON.stringify(deviceInfoResponse);		
+	} else if (operation[&quot;code&quot;] === &quot;APPLICATION_LIST&quot;) {
+		pendingOperations[i].operationResponse = JSON.stringify(applicationListResponse);		
+	} else if (operation[&quot;code&quot;] === &quot;DEVICE_LOCATION&quot;) {
+		pendingOperations[i].operationResponse = JSON.stringify(locationResponse);		
+	} else {
+		pendingOperations[i].operationResponse = &quot;Completed&quot;;
+	}
+}
+
+vars.put(&quot;operationResponse&quot;, JSON.stringify(pendingOperations));
+//log.info(&quot;***************POST-&quot; + JSON.stringify(pendingOperations))
+</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sync Operations- Update Request" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${operationResponse}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host_mgt}</stringProp>
+          <stringProp name="HTTPSampler.port">${port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/device-mgt/android/v1.0/devices/000-000-${device_id_prefix}-${__threadNum}/pending-operations</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${__property(Token)}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

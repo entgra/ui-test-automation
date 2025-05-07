@@ -39,7 +39,7 @@ def create_group(driver, group_name, group_description, role_name):
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((
         By.XPATH, f"//div[text()='{role_name}'] [@class='ant-select-item-option-content']"))).click()
     driver.find_element(By.XPATH, "//p[text()='Select user roles']/ancestor-or-self::div["
-                                  "@ass='ant-card-body']/descendant::button[@type='submit']/span[text("
+                                  "@class='ant-card-body']/descendant::button[@type='submit']/span[text("
                                   ")='Continue']").click()
     generalUtils.verify_notification(driver, "Successfully added the group.")
 
@@ -59,6 +59,5 @@ def create_sub_group(driver, parent_group_name, group_name, group_description, r
     driver.find_element(By.XPATH, "//div[@id='generalGroupSubPanel']/../descendant::button[@type='submit']/span[text("
                                   ")='Continue']").click()
     create_group(driver, group_name, group_description, role_name)
-    time.sleep(2)
 
 
