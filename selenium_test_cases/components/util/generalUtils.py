@@ -173,12 +173,16 @@ def verify_notification(driver, notification_text):
 
 
 def create_button(driver):
-    driver.find_element(By.XPATH, "//span[contains(text(), 'Create')]").click()
-
+    create = driver.find_element(By.XPATH, "//span[contains(text(), 'Create')]")
+    driver.execute_script("arguments[0].scrollIntoView();", create)
+    create.click()
+    driver.find_element(By.XPATH, "//span[contains(text(), 'Create')]")
+    time.sleep(1)
 
 def create_button_group(driver):
     login(driver)
     skip_tour_guide(driver)
+    time.sleep(1)
     create_button(driver)
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//span[text()='Group']"))).click()
 
